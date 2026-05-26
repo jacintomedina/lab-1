@@ -1,0 +1,17 @@
+@use "@fontsource-variable/cormorant/wght.css";
+@use "@fontsource/dm-serif-display";
+
+// COLOR
+
+$base: #3bc4eb;
+$important: #3b55eb;
+$warning: #88b6eb;
+
+// FONTS
+
+$primary-font: "Cormorant Variable", serif;
+$secondary-font: "DM Serif Display", serif;
+
+// SHADOW
+
+$shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.6);

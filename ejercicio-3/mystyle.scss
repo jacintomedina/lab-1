@@ -1,0 +1,68 @@
+@use "@fontsource/poppins";
+
+* {
+  box-sizing: border-box;
+}
+
+.selected {
+  background-color: #5849dc;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cabecera {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin-bottom: 8px;
+  }
+}
+
+.menu-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #5a79e8;
+
+  li {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .cabecera {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-nav {
+    flex-direction: row;
+    background-color: #5a79e8;
+
+    li {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      color: white;
+    }
+  }
+}

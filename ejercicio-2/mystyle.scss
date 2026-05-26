@@ -1,0 +1,85 @@
+@use "@fontsource/poppins";
+@use "temaA";
+@use "temaB";
+
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 3rem;
+
+  & .box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+
+  & .container-1 {
+    & .box-base {
+      background-color: temaA.$base;
+    }
+
+    & .box-important {
+      background-color: temaA.$important;
+    }
+
+    & .box-warning {
+      background-color: temaA.$warning;
+    }
+
+    & .prin-font {
+      font-family: temaA.$primary-font;
+    }
+
+    & .sec-font {
+      font-family: temaA.$secondary-font;
+    }
+
+    & .box-shadow {
+      box-shadow: temaA.$shadow;
+      color: black;
+    }
+  }
+
+  & .container-2 {
+    & .box-base {
+      background-color: temaB.$base;
+    }
+
+    & .box-important {
+      background-color: temaB.$important;
+    }
+
+    & .box-warning {
+      background-color: temaB.$warning;
+    }
+
+    & .prin-font {
+      font-family: temaB.$primary-font;
+    }
+
+    & .sec-font {
+      font-family: temaB.$secondary-font;
+    }
+
+    & .box-shadow {
+      box-shadow: temaB.$shadow;
+      color: black;
+    }
+  }
+}
