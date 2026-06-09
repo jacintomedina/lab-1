@@ -30,143 +30,31 @@ body {
   align-items: center;
 }
 
-// COLOR ROJO
-
-.red- {
+@mixin generate-color-scale($base-color) {
   @for $i from 1 through 4 {
     &darken-#{$i} {
       color: white;
+      background-color: color.adjust($base-color, $lightness: -($i * 10%));
     }
-  }
-
-  &darken-4 {
-    background-color: color.adjust($red, $lightness: -40%);
-  }
-
-  &darken-3 {
-    background-color: color.adjust($red, $lightness: -30%);
-  }
-
-  &darken-2 {
-    background-color: color.adjust($red, $lightness: -20%);
-  }
-
-  &darken-1 {
-    background-color: color.adjust($red, $lightness: -10%);
+    &lighten-#{$i} {
+      background-color: color.adjust($base-color, $lightness: $i * 10%);
+    }
   }
 
   &base-color {
     width: 150px;
-    background-color: $red;
-  }
-
-  &lighten-1 {
-    background-color: color.adjust($red, $lightness: 10%);
-  }
-
-  &lighten-2 {
-    background-color: color.adjust($red, $lightness: 20%);
-  }
-
-  &lighten-3 {
-    background-color: color.adjust($red, $lightness: 30%);
-  }
-
-  &lighten-4 {
-    background-color: color.adjust($red, $lightness: 40%);
+    background-color: $base-color;
   }
 }
 
-// COLOR AZUL
+$palette: (
+  "red": $red,
+  "blue": $blue,
+  "green": $green,
+);
 
-.blue- {
-  @for $i from 1 through 4 {
-    &darken-#{$i} {
-      color: white;
-    }
-  }
-
-  &darken-4 {
-    background-color: color.adjust($blue, $lightness: -40%);
-  }
-
-  &darken-3 {
-    background-color: color.adjust($blue, $lightness: -30%);
-  }
-
-  &darken-2 {
-    background-color: color.adjust($blue, $lightness: -20%);
-  }
-
-  &darken-1 {
-    background-color: color.adjust($blue, $lightness: -10%);
-  }
-
-  &base-color {
-    width: 150px;
-    background-color: $blue;
-  }
-
-  &lighten-1 {
-    background-color: color.adjust($blue, $lightness: 10%);
-  }
-
-  &lighten-2 {
-    background-color: color.adjust($blue, $lightness: 20%);
-  }
-
-  &lighten-3 {
-    background-color: color.adjust($blue, $lightness: 30%);
-  }
-
-  &lighten-4 {
-    background-color: color.adjust($blue, $lightness: 40%);
-  }
-}
-
-// COLOR VERDE
-
-.green- {
-  @for $i from 1 through 4 {
-    &darken-#{$i} {
-      color: white;
-    }
-  }
-
-  &darken-4 {
-    background-color: color.adjust($green, $lightness: -40%);
-  }
-
-  &darken-3 {
-    background-color: color.adjust($green, $lightness: -30%);
-  }
-
-  &darken-2 {
-    background-color: color.adjust($green, $lightness: -20%);
-  }
-
-  &darken-1 {
-    background-color: color.adjust($green, $lightness: -10%);
-  }
-
-  &base-color {
-    width: 150px;
-    background-color: $green;
-  }
-
-  &lighten-1 {
-    background-color: color.adjust($green, $lightness: 10%);
-  }
-
-  &lighten-2 {
-    background-color: color.adjust($green, $lightness: 20%);
-  }
-
-  &lighten-3 {
-    background-color: color.adjust($green, $lightness: 30%);
-  }
-
-  &lighten-4 {
-    background-color: color.adjust($green, $lightness: 40%);
+@each $name, $value in $palette {
+  .#{$name}- {
+    @include generate-color-scale($value);
   }
 }
