@@ -10,14 +10,19 @@ body {
   background-color: $color;
   color: $white;
   font-family: $font;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 header {
+  width: 100%;
+  padding: 2rem 0;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  background-color: $color;
+  z-index: 1;
 
   .header-logo {
     display: flex;
